@@ -1,0 +1,60 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "kit": "https://www.kit.edu/english/#",
+    "schema": "https://schema.org/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "logo": "schema:logo",
+    "sameAs": "schema:sameAs",
+    "foundingDate": "schema:foundingDate",
+    "address": "schema:address",
+    "department": "schema:department",
+    "parentOrganization": "schema:parentOrganization",
+    "subOrganization": "schema:subOrganization",
+    "CollegeOrUniversity": "schema:CollegeOrUniversity",
+    "ResearchOrganization": "schema:ResearchOrganization",
+    "DataCatalog": "schema:DataCatalog",
+    "Dataset": "schema:Dataset",
+    "identifier": "schema:identifier",
+    "doi": "kit:doi",
+    "repository": "kit:repository",
+    "oaiBaseURL": "kit:oaiBaseURL",
+    "archiveAPI": "kit:archiveAPI"
+  },
+  "@type": "CollegeOrUniversity",
+  "name": "Karlsruhe Institute of Technology",
+  "url": "https://www.kit.edu/english/",
+  "description": "Public research university and national research center in Karlsruhe, Germany, operating the KITopen institutional repository (OAI-PMH) and the RADAR4KIT research-data repository (RESTful Archive API).",
+  "sameAs": [
+    "https://github.com/KIT-SCC",
+    "https://www.linkedin.com/school/kit/"
+  ],
+  "subOrganization": [
+    {
+      "@type": "ResearchOrganization",
+      "name": "KIT Library",
+      "url": "https://www.bibliothek.kit.edu/english/",
+      "department": [
+        {
+          "@type": "DataCatalog",
+          "name": "KITopen",
+          "url": "https://www.bibliothek.kit.edu/english/kitopen.php",
+          "oaiBaseURL": "https://dbkit.bibliothek.kit.edu/oai/"
+        },
+        {
+          "@type": "DataCatalog",
+          "name": "RADAR4KIT",
+          "url": "https://www.bibliothek.kit.edu/english/radar.php",
+          "archiveAPI": "https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api"
+        }
+      ]
+    },
+    {
+      "@type": "ResearchOrganization",
+      "name": "Scientific Computing Center (SCC)",
+      "url": "https://www.scc.kit.edu/"
+    }
+  ]
+}

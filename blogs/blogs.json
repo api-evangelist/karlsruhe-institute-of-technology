@@ -1,0 +1,14 @@
+{
+  "repo": "karlsruhe-institute-of-technology",
+  "feeds": [
+    {
+      "source": "https://www.bibliothek.kit.edu/english/news.php",
+      "feed_url": "https://www.bibliothek.kit.edu/english/news.php",
+      "title": "KIT Library News",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-03T00:00:00Z"
+}
