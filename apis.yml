@@ -1,0 +1,104 @@
+---
+aid: karlsruhe-institute-of-technology
+name: Karlsruhe Institute of Technology
+description: >-
+  Karlsruhe Institute of Technology (KIT) is a public research university and
+  national research center in Karlsruhe, Germany, ranked #102 in the QS World
+  University Rankings 2025. KIT's public developer/API footprint is centered on
+  research infrastructure operated by the KIT Library and partner FIZ Karlsruhe:
+  the KITopen institutional repository (built on the dbkit framework, exposing
+  an OAI-PMH harvesting interface), and the RADAR / RADAR4KIT research-data
+  repository which offers a RESTful, OAuth-secured archive API. Identity is
+  handled via a Shibboleth/SAML IdP operated by the Scientific Computing Center
+  (SCC). KIT does not publish a single consolidated developer portal; its
+  open-source code is spread across many institute-level GitHub organizations.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/karlsruhe-institute-of-technology/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Open Data
+  - Research Data
+  - Library
+  - Germany
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: karlsruhe-institute-of-technology:kitopen-oai
+    name: KITopen OAI-PMH Interface
+    description: >-
+      KITopen is KIT's central open-access institutional repository for
+      bibliographic data, full texts, images, research data, and AV media of KIT
+      scientists. It is built on the KIT Library dbkit framework and exposes an
+      OAI-PMH 2.0 metadata-harvesting interface (repository name "KITopen").
+    humanURL: https://www.bibliothek.kit.edu/english/kitopen.php
+    baseURL: https://dbkit.bibliothek.kit.edu/oai/
+    tags: [ Library, Repository, OAI-PMH, Metadata, Open Access, Research ]
+    properties:
+      - type: Documentation
+        url: https://www.bibliothek.kit.edu/english/dbkit.php
+  - aid: karlsruhe-institute-of-technology:dbkit
+    name: dbkit API
+    description: >-
+      dbkit is a web application framework developed by the KIT Library that
+      provides both an API interface and an OAI interface, enabling import and
+      export of bibliographic data (BibTeX, EndNote, RIS, CSL-JSON, ISI).
+      KITopen and related KIT Library applications are built on dbkit.
+    humanURL: https://www.bibliothek.kit.edu/english/dbkit.php
+    tags: [ Library, Metadata, Bibliographic, Export, Framework ]
+    properties:
+      - type: Documentation
+        url: https://www.bibliothek.kit.edu/english/dbkit.php
+  - aid: karlsruhe-institute-of-technology:radar4kit
+    name: RADAR / RADAR4KIT Archive API
+    description: >-
+      RADAR4KIT is KIT's interdisciplinary research-data repository for
+      archiving and publishing research data, based on the RADAR service
+      operated by FIZ Karlsruhe. RADAR provides a RESTful "Archive API" covering
+      contracts, workspaces, datasets, folders, and files (including DOI
+      assignment and WebDAV upload). Access requires an OAuth 2.0 client ID and
+      a dedicated API user activated by RADAR; Shibboleth accounts are not
+      supported for API access.
+    humanURL: https://www.bibliothek.kit.edu/english/radar.php
+    tags: [ Research Data, Repository, REST, OAuth, DOI, FIZ Karlsruhe ]
+    properties:
+      - type: Documentation
+        url: https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api
+      - type: Authentication
+        url: https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api
+  - aid: karlsruhe-institute-of-technology:shibboleth-idp
+    name: KIT Shibboleth Identity Provider (SCC)
+    description: >-
+      KIT operates a Shibboleth/SAML 2.0 Identity Provider via the Scientific
+      Computing Center (SCC) for single sign-on and federated authentication
+      across KIT services and the DFN-AAI federation.
+    humanURL: https://www.scc.kit.edu/
+    baseURL: https://idp.scc.kit.edu/idp/shibboleth
+    tags: [ Identity, SSO, Shibboleth, SAML, Authentication ]
+    properties:
+      - type: Documentation
+        url: https://idp.scc.kit.edu/idp/shibboleth
+common:
+  - type: Website
+    url: https://www.kit.edu/english/
+  - type: GitHub
+    url: https://github.com/KIT-SCC
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/kit/
+  - type: Plans
+    url: plans/karlsruhe-institute-of-technology-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/karlsruhe-institute-of-technology-rate-limits.yml
+  - type: FinOps
+    url: finops/karlsruhe-institute-of-technology-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

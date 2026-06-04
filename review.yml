@@ -1,0 +1,51 @@
+---
+name: Karlsruhe Institute of Technology
+description: Karlsruhe Institute of Technology public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/karlsruhe-institute-of-technology/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      KIT has a real but research-infrastructure-focused public API footprint
+      rather than a consolidated developer portal. Verified live: the KITopen
+      OAI-PMH endpoints (publikationen.bibliothek.kit.edu/oai and the dbkit base
+      URL dbkit.bibliothek.kit.edu/oai, both returning valid OAI-PMH Identify
+      responses with repository name "KITopen"); the dbkit framework page; the
+      RADAR / RADAR4KIT REST Archive API (OAuth 2.0, documented by FIZ
+      Karlsruhe, gated behind a requested client ID); and the SCC Shibboleth
+      IdP. The RADAR production /radar/api/ base path returned 404 to an
+      unauthenticated GET (expected — it requires OAuth and specific resource
+      paths). No fabricated endpoints; only resources confirmed via live probe
+      or official documentation are listed. KIT's open-source code is dispersed
+      across many institute-level GitHub orgs (KIT-SCC, KIT-MRT, KIT-IAI, etc.)
+      with no single official org.
+    endpoints:
+      - url: https://www.kit.edu/english/
+        status: 200
+        note: Official institution website (English).
+      - url: https://publikationen.bibliothek.kit.edu/oai/?verb=Identify
+        status: 200
+        note: KITopen OAI-PMH Identify response, valid OAI-PMH 2.0.
+      - url: https://dbkit.bibliothek.kit.edu/oai/?verb=Identify
+        status: 200
+        note: dbkit/KITopen OAI-PMH base URL reported by Identify.
+      - url: https://www.bibliothek.kit.edu/english/dbkit.php
+        status: 200
+        note: dbkit framework docs (API + OAI interface, import/export).
+      - url: https://www.bibliothek.kit.edu/english/radar.php
+        status: 200
+        note: RADAR4KIT research-data repository overview.
+      - url: https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api
+        status: 200
+        note: RADAR REST Archive API documentation (OAuth 2.0).
+      - url: https://www.radar-service.eu/radar/api/
+        status: 404
+        note: Production API base path; 404 on unauthenticated bare GET (OAuth/resource path required).
+      - url: https://idp.scc.kit.edu/idp/shibboleth
+        status: 200
+        note: KIT SCC Shibboleth/SAML Identity Provider metadata endpoint.
+      - url: https://www.linkedin.com/school/kit/
+        status: 999
+        note: Official LinkedIn school page; 999 is LinkedIn bot-block, page exists.
