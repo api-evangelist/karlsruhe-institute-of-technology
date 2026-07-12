@@ -1,0 +1,28 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.kit.edu
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 29 21:48:04 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: www.bibliothek.kit.edu
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 21:32:08 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: dbkit.bibliothek.kit.edu
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep  6 12:30:10 2026 GMT
+  hsts: false
+domains:
+- domain: kit.edu
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

@@ -85,6 +85,10 @@ apis:
       - type: Documentation
         url: https://idp.scc.kit.edu/idp/shibboleth
 common:
+  - type: VulnerabilityDisclosure
+    url: security/karlsruhe-institute-of-technology-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/karlsruhe-institute-of-technology-domain-security.yml
   - type: Website
     url: https://www.kit.edu/english/
   - type: GitHub
