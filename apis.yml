@@ -78,7 +78,20 @@ apis:
       a dedicated API user activated by RADAR; Shibboleth accounts are not
       supported for API access.
     humanURL: https://www.bibliothek.kit.edu/english/radar.php
-    tags: [ Research Data, Repository, REST, OAuth, DOI, FIZ Karlsruhe ]
+    tags:
+    - Research Data
+    - Repository
+    - REST
+    - Authentication
+    - DOI
+    - FIZ Karlsruhe
+    tags_raw:
+    - Research Data
+    - Repository
+    - REST
+    - OAuth
+    - DOI
+    - FIZ Karlsruhe
     properties:
       - type: Documentation
         url: https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api
