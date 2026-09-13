@@ -16,13 +16,13 @@
       "method": "none"
     },
     {
-      "source": "https://www.bibliothek.kit.edu/english/news.php",
+      "source": "http://blog.bibliothek.kit.edu/kit_bib_news/?feed=rss2",
       "feed_url": "http://blog.bibliothek.kit.edu/kit_bib_news/?feed=rss2",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-09-06T19:17:18Z"
+  "post_count": 10,
+  "fetched": "2026-09-13T13:00:00Z"
 }
