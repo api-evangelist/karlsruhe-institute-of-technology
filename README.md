@@ -64,25 +64,46 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Karlsruhe Institute of Technology (KIT) is a public research university and national research center in Karlsruhe, Germany, ranked #102 in the QS World University Rankings 2025. This repository catalogs KIT's public developer/API footprint as an [APIs.json](https://apisjson.org) provider profile. KIT's API presence is centered on research infrastructure run by the KIT Library and partner FIZ Karlsruhe — the KITopen institutional repository (dbkit framework, OAI-PMH) and the RADAR / RADAR4KIT research-data repository (REST, OAuth) — plus a Shibboleth identity provider operated by the Scientific Computing Center (SCC).
+Karlsruhe Institute of Technology (KIT) is a public research university and national research center of the Helmholtz Association in Karlsruhe, Germany, and a member of the TU9 alliance. This repository catalogs KIT's public programmable footprint as an [APIs.json](https://apisjson.org) provider profile, re-profiled on 2026-09-01 under the API Evangelist university pipeline, which settles **who operates each surface** before anything is saved.
+
+KIT publishes **no central developer portal and no institution-authored API contract**. `api.kit.edu`, `developer.kit.edu`, `data.kit.edu` and `opendata.kit.edu` do not resolve. What KIT does operate — all probed live, not inferred from links — is a set of standards-protocol and self-hosted surfaces on its own `kit.edu` domain, plus two registry memberships. Three of those surfaces answer with a **product's** generic contract (Koha, RADAR, Open WebUI) rather than KIT's own engineering; the deployments are recorded here and those contracts are deliberately **not** saved under KIT's name.
 
 - APIs.json: https://raw.githubusercontent.com/api-evangelist/karlsruhe-institute-of-technology/refs/heads/main/apis.yml
 - Run it with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=karlsruhe-institute-of-technology-api-evangelist&utm_content=repo
 
 ## Type
 
-- Index / Consumer / 3rd-Party
+- University / Technical University / Index / Consumer / 3rd-Party
 
 ## Tags
 
-Education, Higher Education, University, Research, Open Data, Research Data, Library, Germany
+Education, Higher Education, University, Technical University, Germany, Europe, Research, Research Data, Open Access, Open Science, Institutional Repository, Library, OAI-PMH, Identity Federation, Shibboleth, Research Computing, TU9, Helmholtz Association
 
-## APIs
+## Surfaces, by operator
 
-- **KITopen OAI-PMH Interface** — central open-access institutional repository, OAI-PMH 2.0 harvesting. Docs: https://www.bibliothek.kit.edu/english/kitopen.php | Base: https://dbkit.bibliothek.kit.edu/oai/
-- **dbkit API** — KIT Library web application framework providing API + OAI interfaces and bibliographic import/export (BibTeX, EndNote, RIS, CSL-JSON, ISI). Docs: https://www.bibliothek.kit.edu/english/dbkit.php
-- **RADAR / RADAR4KIT Archive API** — research-data repository REST API (OAuth 2.0) for datasets, DOI assignment, and WebDAV upload; based on the RADAR service from FIZ Karlsruhe. Docs: https://radar.products.fiz-karlsruhe.de/en/radarfeatures/radar-api
-- **KIT Shibboleth Identity Provider (SCC)** — Shibboleth/SAML 2.0 SSO and federated authentication. Endpoint: https://idp.scc.kit.edu/idp/shibboleth
+| Surface | `x-operator` | Contract saved? |
+|---|---|---|
+| **KITopen OAI-PMH Interface** — OAI-PMH 2.0 on the KIT Library's own dbkit framework. `verb=Identify` returns `repositoryName "KITopen"`. Base: https://dbkit.bibliothek.kit.edu/oai/ | `institution` | protocol, no OpenAPI |
+| **KIT Library Catalogue REST API** — self-hosted Koha at https://katalog.bibliothek.kit.edu/api/v1/, 242 paths, 16 keyless `/public` paths returning KIT's own branch records | `institution` (deployment) | **No** — `info.contact` is the Koha Development Team |
+| **RADAR4KIT** — research-data repository, a tenancy on FIZ Karlsruhe's RADAR service running on KIT SCC infrastructure. Backend https://radar.kit.edu/radar-backend/ answers 401 | `tenant` | **No** — the RADAR Archive API is FIZ Karlsruhe's |
+| **KIT Shibboleth Identity Provider** — SAML 2.0 metadata at https://idp.scc.kit.edu/idp/shibboleth, registered in DFN-AAI since 2010, bwIDM entity category | `federation` | **No** — the federation's contract is DFN's |
+| **KIT OpenID Connect Provider** — Keycloak realm `kit` at https://oidc.scc.kit.edu/auth/realms/kit, eleven grant types | `institution` | **No** — Keycloak's admin contract is the product's |
+| **KI-Toolbox** — KIT's generative-AI service (Open WebUI 0.10.2) serving SCC-hosted LLMs behind the KIT Account. 458-path OpenAPI 3.1.0 at `/openapi.json` | `institution` (deployment) | **No** — `info.title` is "Open WebUI", no `servers[]` |
+| **DataCite membership** — direct member `kit`, ROR `04t3en479`, client `TIB.KIT4RADAR` | `registry` | never |
+| **Crossref membership** — member 37766, KIT Library, prefix 10.58895, 456 DOIs | `registry` | never |
+| **ROR record** — https://ror.org/04t3en479 | `registry` | never |
+
+## Conformance
+
+`education` regime standards confirmed against live endpoints or contract declarations, in [conformance/karlsruhe-institute-of-technology-conformance.yml](conformance/karlsruhe-institute-of-technology-conformance.yml):
+
+- **oai-pmh** — KITopen `verb=Identify`, `ListMetadataFormats` (oai_dc, epicur, oai_datacite), `ListSets`
+- **saml** — SAML 2.0 IdP metadata, 4 SSO bindings
+- **shibboleth** — Shibboleth IdP paths + DFN-AAI `registrationAuthority`
+- **datacite** — direct member, plus the `oai_datacite` prefix served by KIT's own OAI endpoint
+- **crossref** — KIT Library Crossref member, prefix 10.58895
+
+Not evidenced and deliberately not claimed: `orcid` (prose only, no contract declaration), `lti`, `scim`, `oneroster`, `ed-fi`, `caliper`, `qti`.
 
 ## Plans / Rate Limits / FinOps
 
@@ -93,18 +114,33 @@ Education, Higher Education, University, Research, Open Data, Research Data, Lib
 ## Timestamps
 
 - Created: 2026-06-03
-- Modified: 2026-06-03
+- Modified: 2026-09-01
 
 ## Common Properties
 
 - Website: https://www.kit.edu/english/
-- GitHub: https://github.com/KIT-SCC (Scientific Computing Center; KIT code is spread across many institute-level orgs)
-- LinkedIn: https://www.linkedin.com/school/kit/
+- Research Repository: https://publikationen.bibliothek.kit.edu/ and https://radar.kit.edu/
+- Library Catalog: https://katalog.bibliothek.kit.edu/
+- Course Catalog: https://campus.studium.kit.edu/ (CAS Campus, vendor product, no public API)
+- Identity Federation: https://idp.scc.kit.edu/idp/shibboleth
+- Research Computing: https://www.nhr.kit.edu/ (NHR@KIT / HoreKa)
+- AI Policy: https://www.kit.edu/downloads/KI-Leitlinien-de.pdf
+- AI Tooling: https://www.scc.kit.edu/en/services/ki-toolbox.php
+- GitHub Organization: https://github.com/KIT-SCC (KIT code is spread across many institute-level orgs)
+- Source Code: https://gitlab.kit.edu/ (self-hosted GitLab; its API v4 answers keyless, but the contract is GitLab's)
+- security.txt: https://www.kit.edu/.well-known/security.txt (PGP-signed, `cert@kit.edu`)
 - Review: [review.yml](review.yml)
 
-## Notes
+## Notes on this re-profile
 
-All listed resources were confirmed via live HTTP probe or official documentation as of 2026-06-03; no endpoints were fabricated. KIT does not publish a single consolidated developer portal. The RADAR Archive API is gated — access requires an OAuth client ID and a dedicated API user activated by RADAR (Shibboleth accounts are not accepted for API access); the bare production base path returns 404 to unauthenticated requests. The LinkedIn page returns HTTP 999 (LinkedIn bot-block) but exists. KIT's open-source code is distributed across numerous institute GitHub organizations (KIT-SCC, KIT-MRT, KIT-IAI, KIT-ISAS, kit-algo, teco-kit, and others) rather than one official org.
+Every surface above was probed with live HTTP on 2026-09-01; no endpoints were fabricated and no vendor contract was saved under KIT's name. Changes from the 2026-06-03 profile:
+
+1. The standalone **"dbkit API"** entry was **removed**. It carried no `baseURL` and no documented endpoint; https://www.bibliothek.kit.edu/english/dbkit.php names an "API interface" but publishes no base URL, parameters or formats. dbkit's one evidenced public interface is the KITopen OAI-PMH endpoint, which is recorded as its own entry.
+2. The RADAR documentation pointer `https://www.bibliothek.kit.edu/english/radar.php` was **dead** (302 into the library's soft-404 search page) and was replaced with https://www.bibliothek.kit.edu/english/radar4kit.php.
+3. Five surfaces were **added**: the self-hosted Koha catalogue API, the Keycloak OIDC realm, the KI-Toolbox, the Crossref membership and the ROR record; the DataCite membership was promoted from prose to an evidenced `registry` entry.
+4. Every `apis[]` entry now carries an `x-operator`, and the `Open Data` tag was replaced with `Open Access` / `Open Science` — KIT publishes CC0 bibliographic metadata via OAI-PMH but operates no open data portal.
+
+The LinkedIn page returns HTTP 999 (LinkedIn bot-block) but exists.
 
 ## Maintainers
 
