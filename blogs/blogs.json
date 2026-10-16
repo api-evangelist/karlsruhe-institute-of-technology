@@ -2,11 +2,11 @@
   "repo": "karlsruhe-institute-of-technology",
   "feeds": [
     {
-      "source": "https://www.kit.edu/privacypolicy.php",
-      "feed_url": "https://www.kit.edu/privacypolicy.php",
+      "source": "https://www.kit.edu/english/news.rss",
+      "feed_url": "https://www.kit.edu/english/news.rss",
       "title": "",
-      "saved": 0,
-      "method": "none"
+      "saved": 6,
+      "method": "feed"
     },
     {
       "source": "https://www.kit.edu/kit/english/press_releases.php",
@@ -21,8 +21,15 @@
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://www.kit.edu/privacypolicy.php",
+      "feed_url": "https://www.kit.edu/privacypolicy.php",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-10-03T12:30:02Z"
+  "post_count": 16,
+  "fetched": "2026-10-10T13:15:00Z"
 }
