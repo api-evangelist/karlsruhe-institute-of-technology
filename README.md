@@ -1,4 +1,4 @@
-# Karlsruhe Institute of Technology (karlsruhe-institute-of-technology)
+# Karlsruhe Institute of Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,84 +64,121 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Karlsruhe Institute of Technology (KIT) is a public research university and national research center of the Helmholtz Association in Karlsruhe, Germany, and a member of the TU9 alliance. This repository catalogs KIT's public programmable footprint as an [APIs.json](https://apisjson.org) provider profile, re-profiled on 2026-09-01 under the API Evangelist university pipeline, which settles **who operates each surface** before anything is saved.
+Karlsruhe Institute of Technology (KIT) is a public research university and national research center of the Helmholtz Association in Karlsruhe, Germany, and a member of the TU9 alliance of German institutes of technology. KIT publishes no central developer portal and no institution-authored API contract: api.kit.edu, developer.kit.edu, data.kit.edu and opendata.kit.edu do not resolve at all. What it does operate, and what this profile records, is a set of standards-protocol and self-hosted surfaces on its own kit.edu domain, every one of them probed live on 2026-09-01 rather than taken from a link. The KIT Library runs an OAI-PMH 2.0 provider for the KITopen institutional repository (repositoryName "KITopen", built on the Library's own dbkit framework) and a self-hosted Koha catalogue whose REST API answers keyless on its /public path. The Scientific Computing Center runs a Shibboleth SAML 2.0 Identity Provider registered in the DFN-AAI federation, a Keycloak OpenID Connect realm, and the KI-Toolbox, an Open WebUI deployment serving locally hosted large language models. RADAR4KIT, KIT's research-data repository, is a tenancy on FIZ Karlsruhe's RADAR service running on KIT infrastructure. KIT is a DataCite direct member and a Crossref member in its own right. Three of these surfaces answer with a product's generic contract (Koha, RADAR, Open WebUI) rather than KIT's own engineering; the deployments are recorded here and those contracts are deliberately not saved under KIT's name.
 
-KIT publishes **no central developer portal and no institution-authored API contract**. `api.kit.edu`, `developer.kit.edu`, `data.kit.edu` and `opendata.kit.edu` do not resolve. What KIT does operate — all probed live, not inferred from links — is a set of standards-protocol and self-hosted surfaces on its own `kit.edu` domain, plus two registry memberships. Three of those surfaces answer with a **product's** generic contract (Koha, RADAR, Open WebUI) rather than KIT's own engineering; the deployments are recorded here and those contracts are deliberately **not** saved under KIT's name.
+**Areas:** Education · Higher Education · University · Technical University · Germany · Europe · Research · Research Data · Open Access · Open Science · Institutional Repository · Library
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/karlsruhe-institute-of-technology/refs/heads/main/apis.yml
-- Run it with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=karlsruhe-institute-of-technology-api-evangelist&utm_content=repo
+## Karlsruhe Institute of Technology on APIs.io
 
-## Type
+Everything profiled for Karlsruhe Institute of Technology is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/karlsruhe-institute-of-technology/](https://apis.io/providers/karlsruhe-institute-of-technology/)** — or go straight to one of the APIs or properties below.
 
-- University / Technical University / Index / Consumer / 3rd-Party
+### APIs (9)
 
-## Tags
+- [KITopen OAI-PMH Interface](https://apis.io/apis/karlsruhe-institute-of-technology/kitopen-oai/) — KITopen is KIT's central open-access institutional repository for the bibliographic data, full texts, images, research data and AV media of KIT scientists.…
+- [KIT Library Catalogue REST API (self-hosted Koha)](https://apis.io/apis/karlsruhe-institute-of-technology/library-catalog-api/) — The KIT Library self-hosts Koha, the open-source integrated library system, at katalog.bibliothek.kit.edu, and its REST API is live and served from KIT's…
+- [RADAR4KIT Research Data Repository (RADAR tenancy)](https://apis.io/apis/karlsruhe-institute-of-technology/radar4kit/) — RADAR4KIT is KIT's interdisciplinary research-data repository for archiving and publishing research data with DOI assignment. It is a tenancy on the RADAR…
+- [DFN-AAI Identity Federation — KIT Shibboleth Identity Provider](https://apis.io/apis/karlsruhe-institute-of-technology/shibboleth-idp/) — The Scientific Computing Center operates KIT's Shibboleth SAML 2.0 Identity Provider and publishes its metadata as application/xml from KIT's own host.…
+- [KIT OpenID Connect Provider (SCC Keycloak realm)](https://apis.io/apis/karlsruhe-institute-of-technology/scc-oidc/) — Separately from the Shibboleth IdP, the Scientific Computing Center operates a Keycloak OpenID Connect provider for the "kit" realm on KIT's own domain.…
+- [KI-Toolbox — KIT Generative AI Service (Open WebUI)](https://apis.io/apis/karlsruhe-institute-of-technology/ki-toolbox/) — The Scientific Computing Center operates the KI-Toolbox, KIT's generative-AI service for staff, students and guest accounts, on KIT's own host. It fronts…
+- [DataCite Membership — Karlsruhe Institute of Technology (KIT)](https://apis.io/apis/karlsruhe-institute-of-technology/datacite-member/) — KIT is a DataCite direct member, registering DOIs for its own research output rather than through a consortium proxy. Verified 2026-09-01 at…
+- [Crossref Membership — KIT Library](https://apis.io/apis/karlsruhe-institute-of-technology/crossref-member/) — The KIT Library is a Crossref member in its own right, depositing DOIs under the prefix 10.58895. Verified 2026-09-01 at…
+- [ROR Registry Record — Karlsruhe Institute of Technology](https://apis.io/apis/karlsruhe-institute-of-technology/ror-record/) — KIT's Research Organization Registry identifier, https://ror.org/04t3en479, verified live 2026-09-01 against https://api.ror.org/organizations/04t3en479…
 
-Education, Higher Education, University, Technical University, Germany, Europe, Research, Research Data, Open Access, Open Science, Institutional Repository, Library, OAI-PMH, Identity Federation, Shibboleth, Research Computing, TU9, Helmholtz Association
+### Published properties
 
-## Surfaces, by operator
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Surface | `x-operator` | Contract saved? |
-|---|---|---|
-| **KITopen OAI-PMH Interface** — OAI-PMH 2.0 on the KIT Library's own dbkit framework. `verb=Identify` returns `repositoryName "KITopen"`. Base: https://dbkit.bibliothek.kit.edu/oai/ | `institution` | protocol, no OpenAPI |
-| **KIT Library Catalogue REST API** — self-hosted Koha at https://katalog.bibliothek.kit.edu/api/v1/, 242 paths, 16 keyless `/public` paths returning KIT's own branch records | `institution` (deployment) | **No** — `info.contact` is the Koha Development Team |
-| **RADAR4KIT** — research-data repository, a tenancy on FIZ Karlsruhe's RADAR service running on KIT SCC infrastructure. Backend https://radar.kit.edu/radar-backend/ answers 401 | `tenant` | **No** — the RADAR Archive API is FIZ Karlsruhe's |
-| **KIT Shibboleth Identity Provider** — SAML 2.0 metadata at https://idp.scc.kit.edu/idp/shibboleth, registered in DFN-AAI since 2010, bwIDM entity category | `federation` | **No** — the federation's contract is DFN's |
-| **KIT OpenID Connect Provider** — Keycloak realm `kit` at https://oidc.scc.kit.edu/auth/realms/kit, eleven grant types | `institution` | **No** — Keycloak's admin contract is the product's |
-| **KI-Toolbox** — KIT's generative-AI service (Open WebUI 0.10.2) serving SCC-hosted LLMs behind the KIT Account. 458-path OpenAPI 3.1.0 at `/openapi.json` | `institution` (deployment) | **No** — `info.title` is "Open WebUI", no `servers[]` |
-| **DataCite membership** — direct member `kit`, ROR `04t3en479`, client `TIB.KIT4RADAR` | `registry` | never |
-| **Crossref membership** — member 37766, KIT Library, prefix 10.58895, 456 DOIs | `registry` | never |
-| **ROR record** — https://ror.org/04t3en479 | `registry` | never |
+#### JSON-LD (1)
 
-## Conformance
+Linked-data contexts for the provider's vocabulary.
 
-`education` regime standards confirmed against live endpoints or contract declarations, in [conformance/karlsruhe-institute-of-technology-conformance.yml](conformance/karlsruhe-institute-of-technology-conformance.yml):
+- [Karlsruhe Institute Of Technology Context](https://apis.io/jsonld/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-context/)
 
-- **oai-pmh** — KITopen `verb=Identify`, `ListMetadataFormats` (oai_dc, epicur, oai_datacite), `ListSets`
-- **saml** — SAML 2.0 IdP metadata, 4 SSO bindings
-- **shibboleth** — Shibboleth IdP paths + DFN-AAI `registrationAuthority`
-- **datacite** — direct member, plus the `oai_datacite` prefix served by KIT's own OAI endpoint
-- **crossref** — KIT Library Crossref member, prefix 10.58895
+#### Security (2)
 
-Not evidenced and deliberately not claimed: `orcid` (prose only, no contract declaration), `lti`, `scim`, `oneroster`, `ed-fi`, `caliper`, `qti`.
+Authentication, trust centre, and vulnerability disclosure.
 
-## Plans / Rate Limits / FinOps
+- [Karlsruhe Institute Of Technology Domain Security](https://apis.io/security/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-domain-security/)
+- [Karlsruhe Institute Of Technology Vulnerability Disclosure](https://apis.io/security/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-vulnerability-disclosure/)
 
-- Plans: [plans/karlsruhe-institute-of-technology-plans-pricing.yml](plans/karlsruhe-institute-of-technology-plans-pricing.yml)
-- Rate Limits: [rate-limits/karlsruhe-institute-of-technology-rate-limits.yml](rate-limits/karlsruhe-institute-of-technology-rate-limits.yml)
-- FinOps: [finops/karlsruhe-institute-of-technology-finops.yml](finops/karlsruhe-institute-of-technology-finops.yml)
+#### Plans and pricing (1)
 
-## Timestamps
+Published plans, tiers and prices.
 
-- Created: 2026-06-03
-- Modified: 2026-09-01
+- [Karlsruhe Institute Of Technology Plans Pricing](https://apis.io/plans/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-plans-pricing/)
 
-## Common Properties
+#### Rate limits (1)
 
-- Website: https://www.kit.edu/english/
-- Research Repository: https://publikationen.bibliothek.kit.edu/ and https://radar.kit.edu/
-- Library Catalog: https://katalog.bibliothek.kit.edu/
-- Course Catalog: https://campus.studium.kit.edu/ (CAS Campus, vendor product, no public API)
-- Identity Federation: https://idp.scc.kit.edu/idp/shibboleth
-- Research Computing: https://www.nhr.kit.edu/ (NHR@KIT / HoreKa)
-- AI Policy: https://www.kit.edu/downloads/KI-Leitlinien-de.pdf
-- AI Tooling: https://www.scc.kit.edu/en/services/ki-toolbox.php
-- GitHub Organization: https://github.com/KIT-SCC (KIT code is spread across many institute-level orgs)
-- Source Code: https://gitlab.kit.edu/ (self-hosted GitLab; its API v4 answers keyless, but the contract is GitLab's)
-- security.txt: https://www.kit.edu/.well-known/security.txt (PGP-signed, `cert@kit.edu`)
-- Review: [review.yml](review.yml)
+Published request limits.
 
-## Notes on this re-profile
+- [Karlsruhe Institute Of Technology Rate Limits](https://apis.io/rate-limits/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-rate-limits/)
 
-Every surface above was probed with live HTTP on 2026-09-01; no endpoints were fabricated and no vendor contract was saved under KIT's name. Changes from the 2026-06-03 profile:
+#### FinOps (1)
 
-1. The standalone **"dbkit API"** entry was **removed**. It carried no `baseURL` and no documented endpoint; https://www.bibliothek.kit.edu/english/dbkit.php names an "API interface" but publishes no base URL, parameters or formats. dbkit's one evidenced public interface is the KITopen OAI-PMH endpoint, which is recorded as its own entry.
-2. The RADAR documentation pointer `https://www.bibliothek.kit.edu/english/radar.php` was **dead** (302 into the library's soft-404 search page) and was replaced with https://www.bibliothek.kit.edu/english/radar4kit.php.
-3. Five surfaces were **added**: the self-hosted Koha catalogue API, the Keycloak OIDC realm, the KI-Toolbox, the Crossref membership and the ROR record; the DataCite membership was promoted from prose to an evidenced `registry` entry.
-4. Every `apis[]` entry now carries an `x-operator`, and the `Open Data` tag was replaced with `Open Access` / `Open Science` — KIT publishes CC0 bibliographic metadata via OAI-PMH but operates no open data portal.
+What the API costs to run, by operation.
 
-The LinkedIn page returns HTTP 999 (LinkedIn bot-block) but exists.
+- [Karlsruhe Institute Of Technology Finops](https://apis.io/finops/karlsruhe-institute-of-technology/karlsruhe-institute-of-technology-finops/)
 
-## Maintainers
+## Where to find this API
 
-- Kin Lane — kin@apievangelist.com
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kit.edu/english/)
+- [Support](https://www.scc.kit.edu/en/services/servicedesk.php)
+- [Blog](https://www.kit.edu/kit/english/press_releases.php)
+- [Terms of service](https://www.kit.edu/legals.php)
+- [Privacy policy](https://www.kit.edu/privacypolicy.php)
+- [GitHub](https://github.com/KIT-SCC)
+
+## API Evangelist rating
+
+**Kin Score 32.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 82.1 |
+| Contract quality | 36.5 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 26.3 |
+
+**Agent readiness 16.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.4** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/karlsruhe-institute-of-technology/](https://apis.io/providers/karlsruhe-institute-of-technology/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Karlsruhe Institute of Technology: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/karlsruhe-institute-of-technology/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
